@@ -17,13 +17,13 @@ PizzaParlor.prototype.assignId = function() {
 
 pizzaPrice = function(size, meat, veggie) {
   let x = 0;
-  if (age === "Small") {
+  if (size === "Small") {
     x += 10;
   }
-  else if (age === "Medium") {
+  else if (size === "Medium") {
     x += 12;
   }
-  else if (age === "Large") {
+  else if (size === "Large") {
     x += 15;
   }
   if (meat === "Rabbit") {
@@ -35,7 +35,7 @@ pizzaPrice = function(size, meat, veggie) {
   else if (meat === "Quail") {
     x += 11;
   }
-  else if (movie === "Extra Cheese Instead") {
+  else if (meat === "Extra Cheese Instead") {
     x += 5;
   }
   if (veggie === "Basil, Shallots, & Arugala") {
@@ -65,20 +65,20 @@ PizzaParlor.prototype.deletePizza = function(id) {
   return true;
 };
 
-PizzaParlor.prototype.pizzaSelected = function() {
+Pizza.prototype.pizzaSelected = function() {
   return this.size + " " + this.meat + " " + this.veggie + " " + "= " + this.price;
 };
 
-function listPizzas(pizzaToDisplay) {
-  let pizzaDetailsDiv = document.querySelector("div#pizza-details");
+function listPizza(pizzaParlorToDisplay) {
+  let pizzaDetailsDiv = document.querySelector("div#pizza-choice");
   const ul = document.createElement("ul");
-  Object.keys(pizzaToDisplay.myPizza).forEach(function(key) {
-  const pizza = pizzaToDisplay.findPizza(key);
-  const li = document.createElement("li");
-  li.append(pizza.pizzaSelected());
-  li.setAttribute("id", pizza.id);
-  ul.append(li);
- });
+  Object.keys(pizzaParlorToDisplay.myPizza).forEach(function(key) {
+    const pizza = pizzaParlorToDisplay.findPizza(key);
+    const li = document.createElement("li");
+    li.append(pizza.pizzaSelected());
+    li.setAttribute("id", pizza.id);
+    ul.append(li);
+  });
  pizzaDetailsDiv.append(ul);
 };
 
@@ -99,18 +99,18 @@ function handleFormSubmission(event) {
   const size = document.querySelector("input[name='user-size']:checked").value;
   const meat = document.getElementById("meat-id").value;
   const veggie = document.getElementById("veggie-id").value;
-  const price = pizzaPrice(size, meat, veggie);
+  const price = pizzaPrice(size, meat, veggie)
   let newPizza = new Pizza(size, meat, veggie, price);
   pizzaParlor.addPizza(newPizza);
-  listPizzas(pizzaParlor);
+  listPizza(pizzaParlor);
 };
 
 function displayPizzaDetails(event) {
   const pizza = pizzaParlor.findPizza(event.target.id);
-  document.querySelector(".meat").innerText = ticket.movie;
-  document.querySelector(".veggie").innerText = ticket.time;
-  document.querySelector(".size").innerText = ticket.age;
-  document.querySelector(".price").innerText = ticket.price;
+  document.querySelector(".meat").innerText = pizza.meat;
+  document.querySelector(".veggie").innerText = pizza.veggie;
+  document.querySelector(".size").innerText = pizza.size;
+  document.querySelector(".price").innerText = pizza.price;
   document.querySelector("div#pizza-details").removeAttribute("class");
 };
 
