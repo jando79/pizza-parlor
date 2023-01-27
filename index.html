@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<link href="css/styles.css" rel="stylesheet" type="text/css">
+<script src="js/scripts.js"></script>
+<head>
+  <title>Pizza Parlor</title>
+</head>
+
+<body>
+  <h1>Take A Pizza Me</h1>
+  <p>All pizzas come with a light marina base, and 4 cheese blend</p>
+  <div class = "pizza-parlor">
+    <form id="user-input-form">
+      <p>What Size?</p>
+      <label><input type="radio" name="user-size" value= "small" checked>Small</label><br>
+      <label><input type="radio" name="user-size" value= "medium">Medium</label><br>
+      <label><input type="radio" name="user-size" value= "large">Large</label><br>
+    </form>
+    <br>
+    <form id="meat-form">
+      <p>Select your meat option:</p>
+      <select id="meat-id">
+        <option>Rabbit</option>
+        <option>Duck</option>
+        <option>Quail</option>
+        <option>Extra Cheese Instead</option>
+      </select>
+    </form>
+    <br>
+    <form id="veggie-form">
+      <p>Select your veggie combo:</p>
+      <select id="time-id">
+        <option>Basil, Shallots, & Arugala</option>
+        <option>Tomato, Red Onion, & Garlic</option>
+        <option>All of It</option>
+      </select>
+      <br>
+      <br>
+      <br>
+      <br>
+      <button type="submit">Pizza Please!</button>
+    </form>
+    
+    <br>
+  </div>
+  <br>
+  <h2>Choice:</h2>
+  <div id="pizza-choice">
+  </div>
+
+  <div id="pizza-details" class="hidden">
+    <p>Size: <span class="size"></span></p>
+    <p>Meat: <span class="meat"></span></p>
+    <p>Veggies: <span class="veggie"></span></p>
+    <p>Price: <span class="price"></span></p>
+    <button class="delete" type="button">Remove From Cart</button>
+  </div>
+
+</body>
+</html>
