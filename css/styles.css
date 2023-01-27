@@ -2,3 +2,9 @@
   display: none;
 }
 
+body {
+  background-color: rgb(226, 17, 17);
+  color: rgb(224, 243, 54);
+  text-align: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
