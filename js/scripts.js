@@ -57,6 +57,14 @@ PizzaParlor.prototype.findPizza = function(id) {
   return false;
 };
 
+PizzaParlor.prototype.deletePizza = function(id) {
+  if (this.myPizza[id] === undefined) {
+    return false;
+  }
+  delete this.myPizza[id];
+  return true;
+};
+
 PizzaParlor.prototype.pizzaSelected = function() {
   return this.size + " " + this.meat + " " + this.veggie + " " + "= " + this.price;
 };
@@ -97,5 +105,24 @@ function handleFormSubmission(event) {
   listPizzas(pizzaParlor);
 };
 
+function displayPizzaDetails(event) {
+  const pizza = pizzaParlor.findPizza(event.target.id);
+  document.querySelector(".meat").innerText = ticket.movie;
+  document.querySelector(".veggie").innerText = ticket.time;
+  document.querySelector(".size").innerText = ticket.age;
+  document.querySelector(".price").innerText = ticket.price;
+  document.querySelector("div#pizza-details").removeAttribute("class");
+};
 
+function handleDelete(event) {
+  pizzaParlor.deleteTicket(event.target.id);
+  document.querySelector("button.delete").removeAttribute("id");
+  document.querySelector("div#pizza-details").setAttribute("class", "hidden");
+  listPizza(pizzaParlor);
+};
 
+window.addEventListener("load", function() {
+  document.querySelector("form#veggie-form").addEventListener("submit", handleFormSubmission);
+  document.querySelector("div#pizza-choice").addEventListener("click", displayPizzaDetails);
+  document.querySelector("button.delete").addEventListener("click", handleDelete);
+});
