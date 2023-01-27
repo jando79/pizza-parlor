@@ -55,6 +55,14 @@ PizzaParlor.prototype.findPizza = function(id) {
     return this.myPizza[id];
   }
   return false;
-}
+};
+
+PizzaParlor.prototype.pizzaSelected = function() {
+  return this.size + " " + this.meat + " " + this.veggie + " " + "= " + this.price;
+};
+
+
+
+ 
 
 

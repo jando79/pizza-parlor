@@ -19,3 +19,8 @@ Code:
 let pizza = new PizzaParlor
 Expected Output: 36 different totals in dollar amount
 
+Test: "It should return list all options all options selected, followed by price"
+Code:
+let pizza = new PizzaParlor
+Expected Out: Small, Duck, Basil, Shallots, and Arugala $27
+
