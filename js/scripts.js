@@ -61,8 +61,41 @@ PizzaParlor.prototype.pizzaSelected = function() {
   return this.size + " " + this.meat + " " + this.veggie + " " + "= " + this.price;
 };
 
+function listPizzas(pizzaToDisplay) {
+  let pizzaDetailsDiv = document.querySelector("div#pizza-details");
+  const ul = document.createElement("ul");
+  Object.keys(pizzaToDisplay.myPizza).forEach(function(key) {
+  const pizza = pizzaToDisplay.findPizza(key);
+  const li = document.createElement("li");
+  li.append(pizza.pizzaSelected());
+  li.setAttribute("id", pizza.id);
+  ul.append(li);
+ });
+ pizzaDetailsDiv.append(ul);
+};
+
+function Pizza(size, meat, veggie, price) {
+  this.size = size;
+  this.meat = meat;
+  this.veggie = veggie;
+  this.price = price;
+};
 
 
- 
+//User Interface Logic
+
+let pizzaParlor = new PizzaParlor ();
+
+function handleFormSubmission(event) {
+  event.preventDefault();
+  const size = document.querySelector("input[name='user-size']:checked").value;
+  const meat = document.getElementById("meat-id").value;
+  const veggie = document.getElementById("veggie-id").value;
+  const price = pizzaPrice(size, meat, veggie);
+  let newPizza = new Pizza(size, meat, veggie, price);
+  pizzaParlor.addPizza(newPizza);
+  listPizzas(pizzaParlor);
+};
+
 
 
