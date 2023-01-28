@@ -2,38 +2,32 @@
 
 #### By David Jandron
 
-#### _{Brief description of application}_
+#### Come order some fancy pizza at Take A Pizza Me!
 
 ## Technologies Used
 
-* _List all_
-* _the major technologies_
-* _you used in your project_
-* _here_
+* HTML
+* CSS
+* JavaScript
 
 ## Description
 
-_{This is a detailed description of your application. Give as much detail as needed to explain what the application does as well as any other information you want users or other developers to have.}_
+This is a ficticious pager for a pizza restaurant called, Take A Pizza Me.  The user selects a size, meat, and veggie option. Once the button, "Pizza Me Please" is clicked, the customer will see their selection appear with the dollar value next to it. 
 
 ## Setup/Installation Requirements
 
-* _Clone the repository to your desktop.
+* To view, clone this repository to your desktop
 
-* _Navigate to the top of the directory.
+* Navigate to the top of your directory
 
-* _Open hello-world.html in your browser
+* Open the index.html in your browser
 
-* _easy-to-understand_
-* _format_
-
-_{Leave nothing to chance! You want it to be easy for potential users, employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Is there other code this application depends on? We recommend deleting the project from your desktop, re-cloning the project from GitHub, and writing down all the steps necessary to get the project working again.}_
 
 ## Known Bugs
 
-* _Any known issues_
-* _should go here_
+* N/A
 
-## Copyright (c) <year> <copyright holders>
+## License
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -54,6 +48,5 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
-_{Let people know what to do if they run into any issues or have questions, ideas or concerns.  Encourage them to contact you or make a contribution to the code.}_
 
 Copyright (c) January 27, 2023 by David Jandron
