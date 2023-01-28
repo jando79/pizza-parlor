@@ -25,7 +25,7 @@ This is a ficticious pager for a pizza restaurant called, Take A Pizza Me.  The 
 
 ## Known Bugs
 
-* N/A
+* Clicking delete pizza adds a pizza
 
 ## License
 

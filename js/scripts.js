@@ -66,7 +66,7 @@ PizzaParlor.prototype.deletePizza = function(id) {
 };
 
 Pizza.prototype.pizzaSelected = function() {
-  return this.size + " " + this.meat + " " + this.veggie + " " + "= " + this.price;
+  return this.size + " " + this.meat + " pizza with " + this.veggie + " = " + this.price;
 };
 
 function listPizza(pizzaParlorToDisplay) {
@@ -115,7 +115,7 @@ function displayPizzaDetails(event) {
 };
 
 function handleDelete(event) {
-  pizzaParlor.deleteTicket(event.target.id);
+  pizzaParlor.deletePizza(event.target.id);
   document.querySelector("button.delete").removeAttribute("id");
   document.querySelector("div#pizza-details").setAttribute("class", "hidden");
   listPizza(pizzaParlor);
