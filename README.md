@@ -25,7 +25,9 @@ This is a ficticious pager for a pizza restaurant called, Take A Pizza Me.  The 
 
 ## Known Bugs
 
-* Clicking delete pizza adds a pizza
+* Clicking delete pizza doesn't remove from the cart, but changes values to undefined.
+
+* Multiple pizzas with multiple pizzas return both options with both having same price point.
 
 ## License
 

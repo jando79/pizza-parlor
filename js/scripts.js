@@ -51,18 +51,18 @@ pizzaPrice = function(size, meat, veggie) {
 };
 
 PizzaParlor.prototype.findPizza = function(id) {
-  if (this.myPizza[id] !== undefined) {
-    return this.myPizza[id];
-  }
-  return false;
+ if (this.myPizza[id] !== undefined) {
+   return this.myPizza[id];
+ }
+ return false;
 };
 
 PizzaParlor.prototype.deletePizza = function(id) {
   if (this.myPizza[id] === undefined) {
-    return false;
+   return false;
   }
   delete this.myPizza[id];
-  return true;
+ return true;
 };
 
 Pizza.prototype.pizzaSelected = function() {
@@ -111,6 +111,7 @@ function displayPizzaDetails(event) {
   document.querySelector(".veggie").innerText = pizza.veggie;
   document.querySelector(".size").innerText = pizza.size;
   document.querySelector(".price").innerText = pizza.price;
+  document.querySelector("button.delete").setAttribute("id", pizza.id );
   document.querySelector("div#pizza-details").removeAttribute("class");
 };
 
