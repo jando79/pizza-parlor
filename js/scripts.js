@@ -66,11 +66,12 @@ PizzaParlor.prototype.deletePizza = function(id) {
 };
 
 Pizza.prototype.pizzaSelected = function() {
-  return this.size + " " + this.meat + " pizza with " + this.veggie + " = " + this.price;
+  return this.size + " " + this.meat + " pizza with " + this.veggie + " = " + this.price + "   (Click for order details.)";
 };
 
 function listPizza(pizzaParlorToDisplay) {
   let pizzaDetailsDiv = document.querySelector("div#pizza-choice");
+  pizzaDetailsDiv.innerText = "";
   const ul = document.createElement("ul");
   Object.keys(pizzaParlorToDisplay.myPizza).forEach(function(key) {
     const pizza = pizzaParlorToDisplay.findPizza(key);
@@ -97,8 +98,11 @@ let pizzaParlor = new PizzaParlor ();
 function handleFormSubmission(event) {
   event.preventDefault();
   const size = document.querySelector("input[name='user-size']:checked").value;
+  console.log(size);
   const meat = document.getElementById("meat-id").value;
+  console.log(meat);
   const veggie = document.getElementById("veggie-id").value;
+  console.log(veggie);
   const price = pizzaPrice(size, meat, veggie)
   let newPizza = new Pizza(size, meat, veggie, price);
   pizzaParlor.addPizza(newPizza);
